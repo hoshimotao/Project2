@@ -30,29 +30,8 @@ router.post("/signup", (req, res, next) => {
     });
 });
 
+
 // LOGIN POST ROUTE
-// router.post("/login", (req, res, next) => {
-//   let username = req.body.username;
-//   let password = req.body.password;
-//   User.findOne({ username: username })
-//     .then(userFromDB => {
-//       if (!userFromDB) {
-//         res.redirect("/");
-//       }
-//       if (bcrypt.compareSync(password, userFromDB.password)) {
-//         req.user = userFromDB;
-//         res.redirect("/user/profile");
-//       }
-//     })
-//     .catch(err => {
-//       next(err);
-//     });
-// }); 
-
-
-
-
-
 router.post("/login", passport.authenticate("local", {
   successRedirect: "/user/profile",
   failureRedirect: "/",
