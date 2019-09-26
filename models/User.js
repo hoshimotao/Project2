@@ -13,11 +13,14 @@ const userSchema = new Schema(
       type: Schema.Types.ObjectId, 
       ref: "Feed"
     }],
-    picture: String
-  },
-  {
-    timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
+    picture: {
+      type: String, 
   }
+},
+{
+   timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
+}
+  
 );
 
 const User = mongoose.model("User", userSchema);

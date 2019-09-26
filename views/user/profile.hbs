@@ -1,0 +1,71 @@
+{{!-- LOGOUT BUTTON --}}
+<form class="logoutAbsolute" method='POST' action='/logout'>
+  <button type='submit'>LOG OUT</button>
+</form>
+
+<form class="deleteUser" method='POST' action='/deleteUser/{{theUser._id}}'>
+  <button type='submit'> Delete User </button>
+</form>
+
+
+
+<form class="updateUser" method='GET' action='/user/update/{{theUser._id}}'>
+  <button type='submit'> Update User </button>
+</form>
+
+
+{{!-- create new profile picture --}}
+
+
+
+<form class="alignPost"action="/user/profile/feed" method="POST">
+
+  <div class="createPost">
+<button class="createPostPretty" type="submit" >Create a Post</button>
+</div>
+
+  <input id="feed" type="text" name="feed" textarea = "6">
+<br>
+
+</form>
+ <br>
+
+
+
+
+<div class ="theFeed">
+{{#each showAllFeed}}
+  <div class="customLayout">
+{{this.caption}}<br>
+<img class ="thisPic" src="{{this.photo}}"/>
+
+
+<form action ="/user/profile/delete/{{this._id}}" method="POST">
+<button type="submit"> X </button>
+</form>
+
+
+
+
+
+
+<form action ="/user/edit/{{this._id}}" method="GET">
+<button type="submit"> Edit </button>
+</form>
+</div>
+</div>
+<br>
+
+
+
+
+
+
+
+{{/each}}
+
+</div>
+
+
+
+

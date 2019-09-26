@@ -3,10 +3,12 @@ const Schema = mongoose.Schema;
 
 const feedSchema = new Schema(
   {
-    photo: String,
+    photo: {
+      type: String,
+    },
     caption: String,
-    like: String,
-    comment: {
+    like: Number,
+    author: {
       type: Schema.Types.ObjectId,
       ref: "User"
     }
@@ -19,3 +21,5 @@ const feedSchema = new Schema(
 const Feed = mongoose.model("Feed", feedSchema);
 
 module.exports = Feed;
+
+

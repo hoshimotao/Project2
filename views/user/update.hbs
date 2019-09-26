@@ -1,0 +1,18 @@
+<form class="alignPost"action="/user/update/{{theUser._id}}" method="POST">
+
+  <div>
+<button type="submit" > Update Username </button>
+</div>
+
+  <input id="update" type="text" name="username">
+<br>
+
+</form>
+
+
+
+
+ <form  id ="changePic" action="/user/profile/image" method="post" enctype="multipart/form-data">
+<input type="file" name="photo">
+<button type="submit"> Change profile pic</button>
+</form>

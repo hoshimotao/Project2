@@ -2,20 +2,15 @@ body {
   margin-top: 100px;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-image: url('../images/stars.gif');
+  background-image: url("../images/stars.gif");
   background-repeat: no-repeat;
   background-size: cover;
-  color: white;
-
-}
+  color: white; }
 
 a {
-  text-decoration: none;
-  
-}
+  text-decoration: none; }
 
-#loginForm{
-
+#loginForm {
   display: flex;
   justify-content: center;
   margin-top: 100px;
@@ -24,204 +19,150 @@ a {
   border-radius: 10px;
   padding: 20px 40px;
   width: 600px;
-  margin:auto;
-  
-  
-}
+  margin: auto; }
 
-.account-message{
-  margin-top: 40px;
-}
+.account-message {
+  margin-top: 40px; }
 
-.createPost{
+.createPost {
   display: flex;
   justify-content: center;
   background-color: red;
   padding: 10px 20px;
   border-radius: 10px;
   text-align: center;
-  width: 200px;
+  width: 200px; }
 
-}
-
-#feed{
-
+#feed {
   width: 350px;
-  font-size: 1.5em;
-}
+  font-size: 1.5em; }
 
-a span{
+a span {
   background-color: green;
   color: white;
   padding: 10px 20px;
-  border-radius: 10px;
-}
+  border-radius: 10px; }
 
-.navbar{
-
+.navbar {
   display: flex;
   flex-direction: column;
   align-items: center;
   position: fixed;
-  top: 0;
-}
+  top: 0; }
 
-.proPic{
+.proPic {
   display: flex;
   flex-direction: column;
-  text-align: center;
-}
+  text-align: center; }
 
-.theFeed{
+.theFeed {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 24px;
+  font-size: 24px; }
 
-  
-}
+.deleteButton:hover {
+  display: block; }
 
-.deleteButton:hover{
-  display: block;
-}
+.thisPic {
+  width: 550px; }
 
-.thisPic{
-  width: 550px;
-}
-
-.titleButton{
+.titleButton {
   text-decoration: none;
   color: black;
   font-size: 3em;
-  color: red;
-}
+  color: red; }
 
 h1 a {
-
   color: red;
-  font-size: 2em;
-}
+  font-size: 2em; }
 
-.logoutAbsolute{
-
+.logoutAbsolute {
   position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    box-shadow: 5px 10px;
-    
-    
-}
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 5px 10px; }
 
-.logoutAbsolute button{
+.logoutAbsolute button {
   padding: 10px 20px;
   border: none;
   margin-left: 10px;
   background-color: red;
   color: white;
   font-weight: 900;
-  border-radius: 10px;
+  border-radius: 10px; }
 
-}
+.logoutAbsolute button:hover {
+  cursor: pointer; }
 
-.logoutAbsolute button:hover{
-  cursor: pointer;
-}
-
-.deleteUser{
-
+.deleteUser {
   position: fixed;
-    bottom: 0;
-    margin-left: 80px;
-    width: 100%;
-    box-shadow: 5px 10px;
-    
-    
-}
+  bottom: 0;
+  margin-left: 80px;
+  width: 100%;
+  box-shadow: 5px 10px; }
 
-.deleteUser button{
-  
-padding: 10px 20px;
+.deleteUser button {
+  padding: 10px 20px;
   border: none;
   margin-left: 10px;
   background-color: red;
   color: white;
   font-weight: 900;
-  border-radius: 10px;
-}
+  border-radius: 10px; }
 
-.deleteUser button:hover{
-  cursor: pointer;
-}
+.deleteUser button:hover {
+  cursor: pointer; }
 
-.tinyFont{
-  font-size: 2px;
-}
+.tinyFont {
+  font-size: 2px; }
 
-.alignPost{
+.alignPost {
   display: flex;
-  justify-content: center;
-}
+  justify-content: center; }
 
-#changePic{
+#changePic {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 50px;
-}
+  margin-bottom: 50px; }
 
-.createPostPretty{
+.createPostPretty {
   border: none;
   color: white;
   background-color: red;
   font-size: 1.5em;
-  width: 150px;
-}
+  width: 150px; }
 
 .createPostPretty:hover {
-  cursor: pointer;
-}
+  cursor: pointer; }
 
-.customLayout{
+.customLayout {
   background-color: rgba(78, 74, 74, 0.596);
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 500px;
   margin: auto;
-  font-size: 24px;
-  
-}
+  font-size: 24px; }
 
-.updateUser{
-
+.updateUser {
   position: fixed;
-    bottom: 0;
-    margin-left: 1600px;
-    width: 100%;
-    box-shadow: 5px 10px;
-    
-    
-}
+  bottom: 0;
+  margin-left: 1600px;
+  width: 100%;
+  box-shadow: 5px 10px; }
 
-.updateUser button{
-  
-padding: 10px 20px;
+.updateUser button {
+  padding: 10px 20px;
   border: none;
   margin-left: 10px;
   background-color: red;
   color: white;
   font-weight: 900;
-  border-radius: 10px;
-}
+  border-radius: 10px; }
 
-.updateUser button:hover{
-  cursor: pointer;
-}
+.updateUser button:hover {
+  cursor: pointer; }
 
-
-
-
-
-
-
-
+/*# sourceMappingURL=style.css.map */

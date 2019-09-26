@@ -1,2 +1,21 @@
 <h1>{{title}}</h1>
-<p>Welcome to Jumblr {{title}}</p>
+
+
+<div id="loginForm">
+<form action="/login" method="POST" id="form">
+
+
+  <label for="username"> Username </label>
+  <input type="text" name="username">
+ 
+
+  <label for="password"> Password </label>
+  <input type="password" name="password">
+
+  <button>Sign in</button>
+
+  <p class="account-message">
+    Don't have an account? <a href="/signup"><span> Sign up</span></a>
+  </p>
+</form>
+</div>
