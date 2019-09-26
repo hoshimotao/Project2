@@ -13,9 +13,12 @@ const MongoStore = require("connect-mongo")(session);
 const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
+const User = require('./models/User');
+const bcrypt = require('bcryptjs');
 
 mongoose.Promise = Promise;
-mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true})
+mongoose
+  .connect(process.env.MONGODB_URI, { useNewUrlParser: true })
   .then(x => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
@@ -48,21 +51,66 @@ app.use(
   })
 );
 
+
+
+
+
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
 
-// default value for title local
-// app.locals.title = "Jumblr";
+app.use(
+  session({
+    secret: "our-passport-local-strategy-app",
+    resave: true,
+    saveUninitialized: true
+  })
+);
 
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 app.use(flash());
 
-app.use((req, res, next) => {
-  res.locals.theUser = req.session.currentUser;
+passport.serializeUser((user, cb) => {
+  cb(null, user._id);
+});
 
+passport.deserializeUser((id, cb) => {
+  User.findById(id, (err, user) => {
+    if (err) {
+      return cb(err);
+    }
+    cb(null, user);
+  });
+});
+
+passport.use(
+  new LocalStrategy((username, password, next) => {
+    User.findOne({ username }, (err, user) => {
+      if (err) {
+        return next(err);
+      }
+      if (!user) {
+        return next(null, false, { message: "Incorrect username" });
+      }
+      if (!bcrypt.compareSync(password, user.password)) {
+        return next(null, false, { message: "Incorrect password" });
+      }
+
+      return next(null, user);
+    });
+  })
+);
+
+
+
+
+app.use((req, res, next) => {
+  res.locals.theUser = req.user;
+  res.locals.successMessage = req.flash('success');
   res.locals.errorMessage = req.flash(
     "error",
     "Sorry that username doesn't exist"
@@ -71,50 +119,14 @@ app.use((req, res, next) => {
   next();
 });
 
-passport.serializeUser((user, cb) => {
-  cb(null, user._id);
-});
-
-passport.deserializeUser((id, cb) => {
-  User.findById(id, (err, user) => {
-    if (err) { return cb(err); }
-    cb(null, user);
-  });
-});
-
-passport.use(new LocalStrategy((username, password, next) => {
-  User.findOne({ username }, (err, user) => {
-    if (err) {
-      return next(err);
-    }
-    if (!user) {
-      return next(null, false, { message: "Incorrect username" });
-    }
-    if (!bcrypt.compareSync(password, user.password)) {
-      return next(null, false, { message: "Incorrect password" });
-    }
-
-    return next(null, user);
-  });
-}));
-
-app.use(session({
-  secret: "our-passport-local-strategy-app",
-  resave: true,
-  saveUninitialized: true
-}));
 
 
-app.use(passport.initialize());
-app.use(passport.session());
 
 const index = require("./routes/index");
 app.use("/", index);
 
-
 const userRoute = require("./routes/user-route");
 app.use("/", userRoute);
-
 
 const feedRoute = require("./routes/feed-route");
 app.use("/", feedRoute);

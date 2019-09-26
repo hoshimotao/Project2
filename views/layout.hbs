@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,31 +8,23 @@
   <title>{{title}}</title>
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
-<body>
-  <nav class ="navbar">
 
-    <h1 class ="titleButton"><a href ="/"> Jumblr </a></h1>
+<body>
+  <nav class="navbar">
+
+    <h1 class="titleButton"><a href="/"> Jumblr </a></h1>
 
     <div class="proPic">
-    <h1> {{theUser.username}} </h1>
-    <img width ="150px" src="{{theUser.picture}}"/>
-
-
-
-    {{!-- <form class ="changePic" action="/user/profile/image" method="post" enctype="multipart/form-data">
-<input type="file" name="photo">
-<button type="submit"> Change profile pic</button>
-</form> --}}
+      <h1> {{theUser.username}} </h1>
+      <img width="150px" src="{{theUser.picture}}" />
 
     </div>
 
   </nav>
 
-
-  
-
   {{{body}}}
 
   <script src="/javascripts/script.js"></script>
 </body>
+
 </html>
