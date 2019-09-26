@@ -47,7 +47,7 @@ router.post("/signup", (req, res, next) => {
 //     .catch(err => {
 //       next(err);
 //     });
-// });
+// }); 
 
 router.post("/login", passport.authenticate("local", {
   successRedirect: "/user/profile",
