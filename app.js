@@ -15,8 +15,7 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 
 mongoose.Promise = Promise;
-mongoose
-  .connect("mongodb://localhost/Jumblr", { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true})
   .then(x => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
