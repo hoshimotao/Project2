@@ -70,6 +70,18 @@ a span{
   display: flex;
   flex-direction: column;
   text-align: center;
+  background-color: rgba(177, 37, 37, 0.24);
+  width: 200px;
+  align-items: center;
+}
+
+.updateFormatPic{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: center;
+  margin-top: 210px;
+  font-size: 1.2em;
 }
 
 .theFeed{

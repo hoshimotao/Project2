@@ -14,11 +14,14 @@
 
     <h1 class="titleButton"><a href="/"> Jumblr </a></h1>
 
+
+
+    {{#if theUser}}
     <div class="proPic">
       <h1> {{theUser.username}} </h1>
       <img width="150px" src="{{theUser.picture}}" />
-
     </div>
+    {{/if}}
 
   </nav>
 
