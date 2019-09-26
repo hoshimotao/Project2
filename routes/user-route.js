@@ -49,9 +49,13 @@ router.post("/signup", (req, res, next) => {
 //     });
 // }); 
 
+
+
+
+
 router.post("/login", passport.authenticate("local", {
   successRedirect: "/user/profile",
-  failureRedirect: "/login",
+  failureRedirect: "/",
   failureFlash: true,
   passReqToCallback: true
 }));
