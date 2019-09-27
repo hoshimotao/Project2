@@ -85,18 +85,21 @@ a span{
 }
 
 #deletePostButton{
+  margin-top: 7px;
+  display:flex;
+  justify-content: space-around;
   background-color: red;
   border: none;
   color: white;
+  padding: 4px 6px 2px 6px;
 }
 
-.theFeed{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 24px;
+#deletePostButton:hover{
+  cursor: pointer;
+}
 
-  
+.editPostButton:hover{
+  cursor: pointer;
 }
 
 .deleteButton:hover{
@@ -126,8 +129,7 @@ h1 a {
     bottom: 0;
     left: 0;
     width: 100%;
-    box-shadow: 5px 10px;
-    
+    box-shadow: 5px 10px;    
     
 }
 
@@ -152,14 +154,12 @@ h1 a {
     bottom: 0;
     margin-left: 80px;
     width: 100%;
-    box-shadow: 5px 10px;
-    
-    
+    box-shadow: 5px 10px;     
 }
 
 .deleteUser button{
   
-padding: 10px 20px;
+  padding: 10px 20px;
   border: none;
   margin-left: 10px;
   background-color: red;
@@ -201,14 +201,17 @@ padding: 10px 20px;
 
 .customLayout{
   background-color: rgba(78, 74, 74, 0.596);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 500px;
+  display: flex;  
   margin: auto;
   font-size: 24px;
+  width: 500px;
+  height: auto;
+  justify-content: space-between;
+  
   
 }
+
+
 
 .updateUser{
 

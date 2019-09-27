@@ -20,43 +20,38 @@
 
 
 
-<form class="alignPost"action="/user/profile/feed" method="POST">
+<form class="alignPost" action="/user/profile/feed" method="POST">
 
   <div class="createPost">
-<button class="createPostPretty" type="submit" >Create a Post</button>
-</div>
+    <button class="createPostPretty" type="submit">Create a Post</button>
+  </div>
 
-  <input id="feed" type="text" name="feed" textarea = "6">
+  <input id="feed" type="text" name="feed" textarea="6">
+  <br>
+
+</form>
 <br>
 
-</form>
- <br>
 
+  {{#each showAllFeed}}
+  <div class="customLayout"> 
+     
+      {{this.caption}}<br>    
+    {{!-- <img class="thisPic" src="{{this.photo}}" /> --}}
 
+<div id="editAndDelete">
+    {{!-- delete --}}
+    <form action="/user/profile/delete/{{this._id}}" method="POST">
+      <button id="deletePostButton" type="submit"> X </button>
+    </form>
+    {{!-- edit --}}
+    <form action="/user/edit/{{this._id}}" method="GET">
+      <button class="editPostButton" type="submit"> Edit </button>
+    </form>
 
+    </div>
 
-<div class ="theFeed">
-{{#each showAllFeed}}
-  <div class="customLayout">
-{{this.caption}}<br>
-<img class ="thisPic" src="{{this.photo}}"/>
-
-
-<form action ="/user/profile/delete/{{this._id}}" method="POST">
-<button id="deletePostButton" type="submit"> X </button>
-</form>
-
-
-
-
-
-
-<form action ="/user/edit/{{this._id}}" method="GET">
-<button type="submit"> Edit </button>
-</form>
-
-</div>
-</div>
+  </div>
 <br>
 
 
@@ -68,7 +63,3 @@
 {{/each}}
 
 </div>
-
-
-
-
