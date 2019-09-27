@@ -66,6 +66,11 @@ a span {
   margin-top: 210px;
   font-size: 1.2em; }
 
+#deletePostButton {
+  background-color: red;
+  border: none;
+  color: white; }
+
 .theFeed {
   display: flex;
   flex-direction: column;

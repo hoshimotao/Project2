@@ -84,6 +84,12 @@ a span{
   font-size: 1.2em;
 }
 
+#deletePostButton{
+  background-color: red;
+  border: none;
+  color: white;
+}
+
 .theFeed{
   display: flex;
   flex-direction: column;
