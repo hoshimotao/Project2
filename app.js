@@ -1,5 +1,6 @@
 require("dotenv").config();
 
+
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const express = require("express");
@@ -15,11 +16,12 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require('./models/User');
 const bcrypt = require('bcryptjs');
-const mONGOLAB_BROWN_URI = "MONGOLAB_BROWN_URI"
+// const mongoLabBrown = "process.env.MONGOLAB_BROWN_URI"
+
 
 mongoose.Promise = Promise;
 mongoose
-  .connect(process.env.mONGOLAB_BROWN_URI, { useNewUrlParser: true })
+  .connect("mongodb://localhost:27017/Jumblr", { useUnifiedTopology: true , useNewUrlParser: true })
   .then(x => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
@@ -59,7 +61,7 @@ app.use(
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 app.use(express.static(path.join(__dirname, "public")));
-app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
+// app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
 
 app.use(
   session({
