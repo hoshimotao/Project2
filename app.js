@@ -15,10 +15,11 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require('./models/User');
 const bcrypt = require('bcryptjs');
+const mONGOLAB_BROWN_URI = "MONGOLAB_BROWN_URI"
 
 mongoose.Promise = Promise;
 mongoose
-  .connect(process.env.MONGOLAB_BROWN_URI, { useNewUrlParser: true })
+  .connect(process.env.mONGOLAB_BROWN_URI, { useNewUrlParser: true })
   .then(x => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
