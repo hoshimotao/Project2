@@ -18,14 +18,40 @@ a {
   justify-content: center;
   margin-top: 100px;
   text-align: center;
-  border: 2px solid yellow;
+  border: 2px solid rgba(132, 132, 132, 0.592);
   border-radius: 10px;
-  padding: 20px 40px;
-  width: 600px;
+  padding: 40px 40px;
+  width: 30%;  
   margin: auto; }
 
+::placeholder {
+  color: gray; }
+
+.login_divs {
+  margin-bottom: 5px;
+  height: 20%;
+}
+
+#signInButton{
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 0;
+  -webkit-appearance: none;
+  color: #f7f7f7;
+  font-weight: 500;
+  cursor: pointer;
+  background: rgba(190, 135, 241, 0.776);
+}
+
 .account-message {
-  margin-top: 40px; }
+  margin-top: 40px;
+  
+}
+
+.signUpNow{
+  margin-bottom: 14px;
+  color: rgb(30, 118, 65);
+}
 
 .createPost {
   display: flex;
@@ -41,17 +67,26 @@ a {
   font-size: 1.5em; }
 
 a span {
-  background-color: green;
-  color: white;
+  background-color: rgb(66, 191, 131);
+  color: #f7f7f7f7;
   padding: 10px 20px;
   border-radius: 10px; }
 
-.navbar {
+.theTitle{
   display: flex;
-  flex-direction: column;
   align-items: center;
+}
+
+.navbar {
+  width: 100%;
+  margin:auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   position: fixed;
-  top: 0; }
+  top: 0;
+  right: 0;
+ }
 
 .proPic {
   display: flex;
@@ -91,14 +126,17 @@ a span {
   width: 550px; }
 
 .titleButton {
+  
   text-decoration: none;
   color: black;
   font-size: 3em;
-  color: red; }
+  color: rgb(99, 247, 224); }
 
 h1 a {
-  color: red;
-  font-size: 2em; }
+  
+  color: rgb(99, 247, 224);
+  font-size: 2em;
+  background-color: #f7f7f7 }
 
 .logoutAbsolute {
   position: fixed;

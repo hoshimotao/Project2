@@ -5,17 +5,20 @@
 <form action="/login" method="POST" id="form">
 
 
-  <label for="username"> Username </label>
-  <input type="text" name="username">
- 
+<div class="login_divs">
+  <label for="username" > </label>
+  <input type="text" name="username" placeholder="Username">
+</div>
 
-  <label for="password"> Password </label>
-  <input type="password" name="password">
+<div class="login_divs">
+  <label for="password"> </label>
+  <input type="password" name="password" placeholder="Password">
+</div>
 
-  <button>Sign in</button>
+  <button id="signInButton">Sign in</button>
 
   <p class="account-message">
-    Don't have an account? <a href="/signup"><span> Sign up</span></a>
+    <div class="signUpNow" > Don't have an account? </div> <a href="/signup"><span> Sign up</span></a>
   </p>
 </form>
 </div>
